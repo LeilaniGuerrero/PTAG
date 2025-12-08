@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTAG - Aguas Grises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+            header img {
+                width: 120px;
+            }
+
+        /* Menú hamburguesa */
+        nav {
+            background-color: #023e8a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* Tarjetas */
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 15px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 95%;
+        }
+
+        /* Botón volver arriba */
+        #btnTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #023e8a;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Responsivo */
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Logo PTAG RB">
+        <h1>Planta de Tratamiento de Aguas Grises</h1>
+        <p>¡Donde el agua renace, y el futuro florece!</p>
+    </header>
+
+    <nav>
+        <span class="menu-toggle" onclick="toggleMenu()">☰ Menú</span>
+        <div class="menu-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#que-son">¿Qué son?</a>
+            <a href="#quienes-somos">¿Quiénes Somos?</a>
+            <a href="#servicios">¿Qué Hacemos?</a>
+            <a href="#clientes">Clientes</a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="card">
+        <h2>Bienvenidos</h2>
+        <p>Esta planta está dedicada al tratamiento de Aguas Grises con el fin de promover el ahorro de agua potable y un futuro sustentable.</p>
+    </section>
+
+    <section id="que-son" class="card">
+        <h2>¿Qué son las aguas grises?</h2>
+        <p>Son aguas residuales domésticas que provienen de lavabos, duchas y lavadoras. Tras un proceso de filtración y desinfección, pueden reutilizarse en riego, limpieza y otros usos no potables.</p>
+    </section>
+
+    <section id="quienes-somos" class="card">
+        <h2>¿Quiénes Somos?</h2>
+        <h3>Nuestra Misión</h3>
+        <p>Brindar un servicio ambientalmente responsable a la comunidad de Río Bravo mediante el tratamiento y reutilización de aguas grises.</p>
+        <h3>Nuestra Visión</h3>
+        <p>Consolidarnos como una planta referente en Tamaulipas por nuestra eficiencia, innovación y compromiso con un futuro sustentable.</p>
+    </section>
+
+    <section id="servicios" class="card">
+        <h2>¿Qué Hacemos?</h2>
+        <ul>
+            <li>Recibimos aguas grises de edificios, negocios y sistemas internos.</li>
+            <li>Las tratamos mediante procesos especializados.</li>
+            <li>Obtenemos agua segura para uso no potable:</li>
+            <ul>
+                <li>🌾 Riego agrícola</li>
+                <li>🌿 Jardinería</li>
+                <li>🚽 Sanitarios</li>
+                <li>🧹 Limpieza de patios o áreas comunes</li>
+            </ul>
+            <li><strong>Nota:</strong> El agua tratada no es apta para beber.</li>
+        </ul>
+    </section>
+
+    <section id="clientes" class="card">
+        <h2>Clientes Potenciales</h2>
+        <p>Nuestros servicios están diseñados para:</p>
+        <ul>
+            <li>Agricultores</li>
+            <li>Escuelas y universidades</li>
+            <li>Hoteles y moteles</li>
+            <li>Restaurantes y cafeterías</li>
+            <li>Comercios y plazas</li>
+            <li>Industrias y bodegas</li>
+            <li>Viviendas con alto consumo de agua</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Planta de Tratamiento de Aguas Grises. Todos los derechos reservados.</p>
+    </footer>
+
+    <button id="btnTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Menú hamburguesa
+        function toggleMenu() {
+            const links = document.querySelector(".menu-links");
+            links.style.display = (links.style.display === "block") ? "none" : "block";
+        }
+
+        // Botón volver arriba
+        window.onscroll = function () {
+            const btn = document.getElementById("btnTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
