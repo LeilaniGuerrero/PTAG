@@ -20,3 +20,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+@media (max-width: 600px) {
+    #servicios {
+        flex-direction: column;
+        text-align: center;
+    }
+
+        #servicios img {
+            margin-bottom: 15px;
+        }
+
+        #servicios ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+}
